@@ -14,18 +14,25 @@ export default class AddProject extends Component{
         if(this.refs.title.value==='')
             alert('title is required');
         else{
-            this.setState({
-                newProject:{
-                    id:uuid.v4(),
-                    name:this.refs.title.value,
-                    tech:this.refs.category.value
+            if(this.refs.category.value==='--- Please Choose Category ---')
+                alert('Please select Category for '+this.refs.title.value);
+            else{
+                this.setState({
+                    newProject:{
+                        id:uuid.v4(),
+                        name:this.refs.title.value,
+                        tech:this.refs.category.value
+                    }
+                },
+                ()=>this.props.AddedProject(this.state.newProject)
+                );
+                this.SetInputsToDefaultValues();
                 }
-            },
-            ()=>this.props.AddedProject(this.state.newProject)
-        );
-            this.refs.title.value='';
-            this.refs.category.value='--- Please Choose Category ---';
         }
+    }
+    SetInputsToDefaultValues() {
+        this.refs.title.value = '';
+        this.refs.category.value = '--- Please Choose Category ---';
     }
     render(){
         let CategoryOptions=this.defaultCategories.map((categories,index)=>{
