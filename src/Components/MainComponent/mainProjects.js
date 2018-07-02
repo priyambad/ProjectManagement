@@ -43,9 +43,11 @@ export default class MainProject extends Component{
     }
     render(){
         return (
-            <div class="mainComponent">
-                <AddProject AddedProject={this.addNewProject.bind(this)}/>
-                <Projects deleteProject={this.deleteProject.bind(this)} projects={this.state.projects}/>
+            <div>
+                <div className="mainComponent">
+                    <AddProject AddedProject={this.addNewProject.bind(this)}/>
+                    <Projects deleteProject={this.deleteProject.bind(this)} projects={this.state.projects}/>
+                </div>
             </div>
         );
     }

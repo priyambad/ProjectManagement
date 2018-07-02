@@ -1,12 +1,10 @@
 import React,{Component} from 'react';
-
-export default class ShowProject extends Component{
+export default class ToDo extends Component{
     render(){
-        console.log(this.props.project);
         return(
             <div>
-
+                <h3>todo</h3>
             </div>
-        ); 
+        );
     }
 }

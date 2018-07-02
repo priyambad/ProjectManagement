@@ -12,13 +12,14 @@ export default class Projects extends Component{
             <div>
                 <h3>Projects in Your repository</h3>
                 <table>
-                    <tr>
-                        <td><strong>Project Name</strong></td>
-                        <td><strong>Technology Used</strong></td>
-                        <td><strong>Delete</strong></td>
-                    </tr>
                     <tbody>
-                    {projectsList}
+                        <tr>
+                            <td><strong>Project Name</strong></td>
+                            <td><strong>Technology Used</strong></td>
+                            <td><strong>Delete</strong></td>
+                        </tr>
+                        
+                        {projectsList}
                     </tbody>
                 </table>
             </div>
